@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Chat App</title>
+        <title>Chat Inn</title>
         <style type="text/css">
 
             body {
@@ -79,14 +79,15 @@
             <div id = "back"></div>
             <div>
                 <label id = "join"><b>Join As</b></label>
-                <input id = "name" type="text" placeholder="Enter Username" name="uname" required>
-                <button id = "enter" type="Enter" onclick="login()">Log In</button>
+                <input id = "name" type="text" placeholder="Enter Username" required>
+                <button id = "enter" type="button" onclick="login()">Log In</button>
             </div>
         </div>
         <script language="javascript" type="text/javascript">
         function login() 
         {
-            window.location.href = "http://www.google.com";
+            sessionStorage.setItem("username", document.getElementById('name').value); 
+            window.open("rooms.html", "_self",false);
         }
         </script>
 
