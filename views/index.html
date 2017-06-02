@@ -1,101 +1,31 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Chat Inn</title>
-        <style type="text/css">
+<head>
+  <title>Chat Inn</title>
+  <link rel="stylesheet" type="text/css" href="/assets/style.css">
+</head>
+<body>
+  <div id="container">
+    <div id = "back"></div>
+    <div>
+      <label id = "join"><b>Join As</b></label>
+      <input id = "name" type="text" placeholder="Enter Username" required>
+      <button id = "enter" type="button" onclick="login()">Log In</button>
+    </div>
+  </div>
+  <script language="javascript" type="text/javascript">
+  document.getElementById("name").addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode == 13) {
+      document.getElementById("enter").click();
+    }
+  });
+  function login()
+  {
+    sessionStorage.setItem("username", document.getElementById('name').value);
+    window.open("rooms.html", "_self",false);
+  }
+  </script>
 
-            body {
-                margin: 0;
-                background-image: url("sources/background.jpg");
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: center; 
-            }
-
-            #container {
-                position: absolute;
-                height: 200px;
-                width: 200px;
-                margin: -100px 0 0 -100px;
-                top: 50%;
-                left: 50%;
-            }
-
-            #back{
-                background: #FFF;
-                opacity: 0.25;
-                border-radius: 5px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-            }
-
-            #join{
-                position: absolute;
-                height: 20px;
-                width: 100px;
-                left:50px;
-                top:50px;
-                text-align: center;
-                color: #FFCCF9;
-                font-size: 120%;
-            }
-
-            #name {
-                position: absolute;
-                height: 20px;
-                width: 150px;
-                left: 25px;
-                top:80px;
-                border-radius: 2px;
-                border:none;
-                text-align: center;
-            }
-
-            #enter{
-                position: absolute;
-                height: 22px;
-                width: 60px;
-                left: 70px;
-                top:112px;
-                background-color: #275CAC;
-                color: #FFCCF9;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 12px;
-                border-radius: 3px;
-                border-color: #FFCCF9;
-                border-style: solid;
-                border-width: 0.5px;
-            }
-
-        </style>
-    </head>
-    <body>
-        <div id="container">
-            <div id = "back"></div>
-            <div>
-                <label id = "join"><b>Join As</b></label>
-                <input id = "name" type="text" placeholder="Enter Username" required>
-                <button id = "enter" type="button" onclick="login()">Log In</button>
-            </div>
-        </div>
-        <script language="javascript" type="text/javascript">
-        document.getElementById("name").addEventListener("keyup", function(event) {
-            event.preventDefault();
-            if (event.keyCode == 13) {
-                document.getElementById("enter").click();
-            }
-        });
-        function login() 
-        {
-            sessionStorage.setItem("username", document.getElementById('name').value); 
-            window.open("rooms.html", "_self",false);
-        }
-        </script>
-
-    </body>
+</body>
 </html>

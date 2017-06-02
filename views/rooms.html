@@ -1,197 +1,85 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Chat Inn</title>
-        <style type="text/css">
-        	body {
-                margin: 0;
-            }
-            #container{
-            	position: absolute;
-                width: 100%;
-                height: 100%;
-                top:0;
-                left:0;
-            }
-            #header{
-            	position: absolute;
-            	background-image: url("sources/background.jpg");
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position: bottom;
-                width: 100%;
-                height: 10%;
-                top:0;
-                left:0;
-                opacity: 0.9;
-            }
-            #username{
-            	position: absolute;
-            	color: #B380CB;
-            	width: 200px;
-                height: 200px;
-                font-size: 40px;
-                margin: -30px 0 0 -100px;
-                left:12%;
-                top:50%;
-                text-align: left;
-            }
-            #logout{
-            	position: absolute;
-            	color: #B380CB;
-            	width: 100px;
-                height: 200px;
-                font-size: 20px;
-                margin: -10px 0 0 -10px;
-                right:5px;
-                top:50%;
-                text-align: left;
-            }
-            #sections{
-            	position: absolute;
-            	top:10%;
-            	width: 100%;
-            	height:100%;
-            }
-            #title{
-            	position: absolute;
-            	width: 100%;
-            	height: 20%;
-            	top:5%;
-            }
-            #bottom_div{
-            	position: absolute;
-            	background-color: #F6F6F6;
-            	width: 100%;
-            	height:60%;
-            	top: 15%;
-            	overflow: auto;
-            }
-            #title_label{
-            	position: absolute;
-            	color: #A2F1FF;
-            	font-size: 30px;
-            	text-align: center;
-            	border-style: solid;
-            	left:45%;
-            	width: 100px;
-            }
-            #list{
-            	color: #A2F1FF;
-            	font-size: 30px;
-            }
-            hr { 
-    			display: block;
-    			margin-top: 0.5em;
-    			margin-bottom: 0.5em;
-    			margin-left: auto;
-    			margin-right: 20px;
-    			border-style: solid;
-    			border-width: 1.5px;
-    			border-color: #FFFFFF;
-			} 
-			#add_room{
-				position: absolute;
-				top:78%;
-				width: 100%;
-			}
-			#room_name{
-				position: absolute;
-				width: 300px;
-				height: 30px;
-				left: 30px;
-				font-size: 20px;
-			}
-			#create_room{
-				position: absolute;
-				left: 340px;
-				width: 100px;
-				height: 30px;
-				color: #A2F1FF;
-				border-color: #A2F1FF;
-				border-style: solid;
-				background-color: #FFFFFF;
-				font-size: 20px;
-				top:2px;
-			}
-        </style>
-    </head>
-  	<body>
-  		<div id="container">
-  			<div id = "header">
-  				<label id = "username"><b>dfdffd</b></label>
-  				<label id = "logout"><b>Log Out</b></label>
-  			</div>
-            <div id = "sections">
-            	<div id = "title">
-            		<label id = "title_label"><b>Rooms</b></label>
-            	</div>
-            	<div id = "bottom_div">
-                	<ul style="list-style-type:none" id = "room_list">
-  						<li id = "list">room 1</li>
-  						<hr>
-  						<li id = "list">room 2</li>
-  						<hr>
- 				 		<li id = "list">room 3</li>
- 				 		<hr>
- 				 		<li id = "list">room 4</li>
- 				 		<hr>
- 				 		<li id = "list">room 5</li>
- 				 		<hr>
- 				 		<li id = "list">room 6</li>
- 				 		<hr>
- 				 		<li id = "list">room 7</li>
- 				 		<hr>
- 				 		<li id = "list">room 8</li>
-					</ul>
-				</div>
-				<div id = "add_room">
-					<input id = "room_name" type="text" required>
-                	<button id = "create_room" type="button" >Create</button>
-				</div>
-            </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    	<script type="text/javascript">
+<head>
+  <title>Chat Inn</title>
+  <link rel="stylesheet" type="text/css" href="/assets/style_room.css">
+</head>
+<body>
+  <div id="container">
+    <div id = "header">
+      <label id = "username"><b>dfdffd</b></label>
+      <label id = "logout"><b>Log Out</b></label>
+    </div>
+    <div id = "sections">
+      <div id = "title">
+        <label id = "title_label"><b>Rooms</b></label>
+      </div>
+      <div id = "bottom_div">
+        <ul style="list-style-type:none" id = "room_list">
+          <li id = "list">room 1</li>
+          <hr>
+          <li id = "list">room 2</li>
+          <hr>
+          <li id = "list">room 3</li>
+          <hr>
+          <li id = "list">room 4</li>
+          <hr>
+          <li id = "list">room 5</li>
+          <hr>
+          <li id = "list">room 6</li>
+          <hr>
+          <li id = "list">room 7</li>
+          <hr>
+          <li id = "list">room 8</li>
+        </ul>
+      </div>
+      <div id = "add_room">
+        <input id = "room_name" type="text" required>
+        <button id = "create_room" type="button" >Create</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
 
-        	$(function() {
+  $(function() {
 
-            var addAction = function() {
+    var addAction = function() {
 
-                var newRoomValue = $('#room_name').val();
+      var newRoomValue = $('#room_name').val();
 
-                if (newRoomValue == '') {
-                    return true;
-                }
-                
-                $('#room_list').append('<hr>');
-                $('#room_list').append('<li id = "list">' + newRoomValue + '</li>');
+      if (newRoomValue == '') {
+        return true;
+      }
 
-            };
+      $('#room_list').append('<hr>');
+      $('#room_list').append('<li id = "list">' + newRoomValue + '</li>');
 
-            document.getElementById("room_name").addEventListener("keyup", function(event) {
-            	event.preventDefault();
-            	if (event.keyCode == 13) {
-                	document.getElementById("create_room").click();
-            	}
-        	});
+    };
 
-            $('#logout').click(function() {
-       			window.open("index.html", "_self",false);
-			});
-            $('#create_room').on('click', addAction);
+    document.getElementById("room_name").addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode == 13) {
+        document.getElementById("create_room").click();
+      }
+    });
 
-        });
+    $('#logout').click(function() {
+      window.open("index.html", "_self",false);
+    });
+    $('#create_room').on('click', addAction);
 
-    </script>
-  		<script language="javascript" type="text/javascript">
-  			var username = sessionStorage.getItem("username");
-  			document.getElementById('username').innerHTML = username;
-  			function create() 
-        	{
-            	var room = document.getElementById('room_name').value; 
-            	document.write(room);
-        	}
-  		</script>
-  	</body>
- </html>
+  });
+
+  </script>
+  <script language="javascript" type="text/javascript">
+  var username = sessionStorage.getItem("username");
+  document.getElementById('username').innerHTML = username;
+  function create()
+  {
+    var room = document.getElementById('room_name').value;
+    document.write(room);
+  }
+  </script>
+</body>
+</html>
