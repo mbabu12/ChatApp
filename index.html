@@ -84,6 +84,12 @@
             </div>
         </div>
         <script language="javascript" type="text/javascript">
+        document.getElementById("name").addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode == 13) {
+                document.getElementById("enter").click();
+            }
+        });
         function login() 
         {
             sessionStorage.setItem("username", document.getElementById('name').value); 
