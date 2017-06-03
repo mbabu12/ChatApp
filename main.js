@@ -1,36 +1,16 @@
-var http = require('http');
-var fs = require('fs');
-var path = require('path');
+var express = require('express');
+var mainController = require('./controllers/mainController');
+var app = express();
 
-var server = http.createServer(function (req, res) {
-  var filePath = '.' + req.url;
-  var extname = path.extname(filePath);
+//setting template engine
+app.set('view engine', 'ejs');
 
-  if(req.url === '/home' || req.url === '/'){
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.createReadStream(__dirname + '/views/index.html').pipe(res);
-  }
-  else if(req.url === '/rooms'){
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.createReadStream(__dirname + '/views/rooms.html').pipe(res);
-  }
-  else if(extname === '.css'){
-    res.writeHead(200, {'Content-Type': 'text/css'});
-    fs.createReadStream(filePath).pipe(res);
-  }
-  else if(extname === '.jpg'){
-    res.writeHead(200, {'Content-Type': 'image/jpg'});
-    fs.createReadStream(filePath).pipe(res);
-  }
-  else if(extname === '.html'){
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.createReadStream(__dirname + '/views' + req.url).pipe(res);
-  }
-  else{
-    res.writeHead(404, {'Content-Type': 'text/html'});
-    res.end("File Not Found");
-  }
-});
+//sets static files
+app.use('/assets',express.static('assets'));
 
-server.listen(3000, '127.0.0.1');
+//start mainController
+mainController(app);
+
+//listening to port 3000
+app.listen(3000, '127.0.0.1');
 console.log('listening to port 3000');
