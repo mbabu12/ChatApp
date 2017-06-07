@@ -5,13 +5,12 @@
   <link rel="stylesheet" type="text/css" href="/assets/style.css">
 </head>
 <body>
-  <div id="container">
-    <div id = "back"></div>
-    <div>
-      <label id = "join"><b>Join As</b></label>
-      <input id = "name" type="text" placeholder="Enter Username" required>
-      <button id = "enter" type="button" onclick="login()">Log In</button>
-    </div>
+  <div id = "menu">
+    <h1>Log In</h1>
+    <input id = "name" type="text" placeholder="Enter Username" required>
+    <input id = "password" type="text" placeholder="Enter Password" required>
+    <button type="button" onclick="login()">Enter</button>
+    <a href="">Sign Up</a>
   </div>
   <script language="javascript" type="text/javascript">
   document.getElementById("name").addEventListener("keyup", function(event) {
