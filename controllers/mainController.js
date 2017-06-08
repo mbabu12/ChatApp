@@ -1,10 +1,10 @@
 module.exports = function(app){
 
   app.get('/', function(req,res){
-    res.sendFile('/Users/Home/Documents/ChatApp/views/index.html');
+    res.render('index');
   });
 
   app.get('/rooms.html', function(req,res){
-    res.sendFile('/Users/Home/Documents/ChatApp/views/rooms.html');
+    res.render('rooms');
   });
 };
