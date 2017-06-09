@@ -3,83 +3,39 @@
 <head>
   <title>Chat Inn</title>
   <link rel="stylesheet" type="text/css" href="/assets/style_room.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div id="container">
-    <div id = "header">
-      <label id = "username"><b>dfdffd</b></label>
-      <label id = "logout"><b>Log Out</b></label>
-    </div>
-    <div id = "sections">
-      <div id = "title">
-        <label id = "title_label"><b>Rooms</b></label>
-      </div>
-      <div id = "bottom_div">
-        <ul style="list-style-type:none" id = "room_list">
-          <li id = "list">room 1</li>
-          <hr>
-          <li id = "list">room 2</li>
-          <hr>
-          <li id = "list">room 3</li>
-          <hr>
-          <li id = "list">room 4</li>
-          <hr>
-          <li id = "list">room 5</li>
-          <hr>
-          <li id = "list">room 6</li>
-          <hr>
-          <li id = "list">room 7</li>
-          <hr>
-          <li id = "list">room 8</li>
-        </ul>
-      </div>
-      <div id = "add_room">
-        <input id = "room_name" type="text" required>
-        <button id = "create_room" type="button" >Create</button>
-      </div>
-    </div>
+  <div id = "header">
+    <h1 id = "username">dfdffd</h1>
+    <h1 id = "logout">Log Out</h1>
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script type="text/javascript">
-
-  $(function() {
-
-    var addAction = function() {
-
-      var newRoomValue = $('#room_name').val();
-
-      if (newRoomValue == '') {
-        return true;
-      }
-
-      $('#room_list').append('<hr>');
-      $('#room_list').append('<li id = "list">' + newRoomValue + '</li>');
-
-    };
-
-    document.getElementById("room_name").addEventListener("keyup", function(event) {
-      event.preventDefault();
-      if (event.keyCode == 13) {
-        document.getElementById("create_room").click();
-      }
-    });
-
-    $('#logout').click(function() {
-      window.open("index.html", "_self",false);
-    });
-    $('#create_room').on('click', addAction);
-
-  });
-
-  </script>
-  <script language="javascript" type="text/javascript">
-  var username = sessionStorage.getItem("username");
-  document.getElementById('username').innerHTML = username;
-  function create()
-  {
-    var room = document.getElementById('room_name').value;
-    document.write(room);
-  }
-  </script>
+  <div id = "title">
+    <h1 id = "title_label">Rooms</h1>
+  </div>
+  <div id = "bottom_div">
+    <ul style="list-style-type:none" id = "room_list">
+      <li id = "list">room 1</li>
+      <hr>
+      <li id = "list">room 2</li>
+      <hr>
+      <li id = "list">room 3</li>
+      <hr>
+      <li id = "list">room 4</li>
+      <hr>
+      <li id = "list">room 5</li>
+      <hr>
+      <li id = "list">room 6</li>
+      <hr>
+      <li id = "list">room 7</li>
+      <hr>
+      <li id = "list">room 8</li>
+    </ul>
+  </div>
+  <div id = "add_room">
+    <input id = "room_name" type="text" required>
+    <button id = "create_room" type="button" >Create</button>
+  </div>
+  <script src="assets/roomsview.js"></script>
 </body>
 </html>
