@@ -1,7 +1,7 @@
 var bodyparser = require('body-parser');
-var addData = require('../assets/addData');
-const UserModel = require('../models/user');
+var checkData = require('../assets/checkData');
 var connection = require('../assets/connection');
+const UserModel = require('../models/user');
 
 var urlencodedParser = bodyparser.urlencoded({ extended: false });
 //connecting to chatdb
@@ -19,12 +19,23 @@ module.exports = function(app){
 
   app.post('/', urlencodedParser, function(req,res){
     var user = new UserModel({userName:req.body.lname, password:req.body.lpassword, avatar:''});
-    addData(user).then(function(resp){
-      console.log(resp);
-      if(resp)
-      res.send('already added');
-      else
-      res.send('success');
-    })
+    if(req.body.login === 'no'){
+      checkData.addUser(user).then(function(resp){
+        console.log(resp);
+        if(resp)
+        res.send('already added');
+        else
+        res.send('success');
+      });
+    }
+    else{
+      checkData.checkUser(user).then(function(resp){
+        console.log(resp);
+        if(resp)
+        res.send('user exists');
+        else
+        res.send('wrong username or password');
+      });
+    }
   });
 };

@@ -4,14 +4,19 @@ $(document).ready(function(){
 
     var name = $('#name').val();
     var password = $('#password').val();
-    var loginData = {lname: name, lpassword:password};
+    var loginData = {login:'yes', lname: name, lpassword:password};
 
     $.ajax({
       type: 'POST',
       url: '/',
       data: loginData,
-      success: function(data){
-        location.reload();
+      success: function(resp){
+        if(resp === 'user exists'){
+          window.location.href = '/rooms';
+        }
+        else{
+          location.reload();
+        }
       }
     });
 
@@ -23,7 +28,7 @@ $(document).ready(function(){
 
     var name = $('#name').val();
     var password = $('#password').val();
-    var loginData = {lname: name, lpassword:password};
+    var loginData = {login:'no', lname: name, lpassword:password};
 
     $.ajax({
       type: 'POST',
