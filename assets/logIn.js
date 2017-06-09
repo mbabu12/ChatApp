@@ -29,13 +29,20 @@ $(document).ready(function(){
       type: 'POST',
       url: '/',
       data: loginData,
-      success: function(data){
-        location.reload();
+      success: function(resp){
+        if(resp === 'success'){
+          window.location.href = '/rooms';
+        }
+        else{
+          location.reload();
+        }
+      },
+      error: function(err){
+        alert(err);
       }
     });
 
     return false;
-
   });
 });
 

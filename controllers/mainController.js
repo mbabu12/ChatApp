@@ -13,12 +13,18 @@ module.exports = function(app){
     res.render('index');
   });
 
-  app.get('/rooms.html', function(req,res){
+  app.get('/rooms', function(req,res){
     res.render('rooms');
   });
 
   app.post('/', urlencodedParser, function(req,res){
     var user = new UserModel({userName:req.body.lname, password:req.body.lpassword, avatar:''});
-    addData(user);
+    addData(user).then(function(resp){
+      console.log(resp);
+      if(resp)
+      res.send('already added');
+      else
+      res.send('success');
+    })
   });
 };
