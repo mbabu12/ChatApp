@@ -5,7 +5,7 @@ module.exports = function(){
   mongoose.Promise = global.Promise;
   //connect to database
   mongoose.connect('mongodb://localhost/chatdb');
-  
+
   mongoose.connection.once('open', function(){
     console.log("connection has been made");
   }).on('error',function(error){
