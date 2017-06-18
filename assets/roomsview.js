@@ -10,7 +10,7 @@ $(function() {
 
     $('#room_list').append('<hr>');
     $('#room_list').append('<li id = "list">' + newRoomValue + '</li>');
-
+    
   };
 
   document.getElementById("room_name").addEventListener("keyup", function(event) {

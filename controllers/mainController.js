@@ -1,6 +1,6 @@
 var bodyparser = require('body-parser');
-var checkData = require('../assets/checkData');
-var connection = require('../assets/connection');
+var checkData = require('../models/checkData');
+var connection = require('../models/connection');
 const UserModel = require('../models/user');
 var roomsController = require('./roomsController');
 
@@ -12,6 +12,10 @@ module.exports = function(app){
 
   app.get('/', function(req,res){
     res.render('index');
+  });
+
+  app.get('/sign', function(req,res){
+    res.render('sign');
   });
 
   app.post('/', urlencodedParser, function(req,res){

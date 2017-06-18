@@ -36,7 +36,7 @@ $(document).ready(function(){
       data: loginData,
       success: function(resp){
         if(resp === 'success'){
-          window.location.href = '/rooms';
+          window.location.href = '/';
         }
         else{
           location.reload();
