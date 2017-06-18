@@ -8,9 +8,8 @@ $(function() {
       return true;
     }
 
-    $('#room_list').append('<hr>');
-    $('#room_list').append('<li id = "list">' + newRoomValue + '</li>');
-    
+    $('#room_list').append('<section class = "room">');
+
   };
 
   document.getElementById("room_name").addEventListener("keyup", function(event) {
@@ -23,14 +22,19 @@ $(function() {
   $('#logout').click(function() {
     window.open("/", "_self",false);
   });
+
+  $('.seeFull').click(function() {
+    window.open("/conversation", "_self",false);
+  });
+
   $('#create_room').on('click', addAction);
 
 });
-
+/*
 var username = sessionStorage.getItem("username");
 document.getElementById('username').innerHTML = username;
 function create()
 {
   var room = document.getElementById('room_name').value;
   document.write(room);
-}
+}*/

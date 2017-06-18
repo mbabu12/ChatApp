@@ -6,36 +6,53 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div id = "header">
-    <h1 id = "username">dfdffd</h1>
-    <h1 id = "logout">Log Out</h1>
+  <nav>
+    <div class = "dropdown">
+      <button class = "settings"></button>
+      <div class = "content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <button id = "logout"></button>
+      </div>
+    </div>
+  </nav>
+  <div class = 'title'>
+    <p>ROOMS</p>
+    <hr>
   </div>
-  <div id = "title">
-    <h1 id = "title_label">Rooms</h1>
-  </div>
-  <div id = "bottom_div">
-    <ul style="list-style-type:none" id = "room_list">
-      <li id = "list">room 1</li>
-      <hr>
-      <li id = "list">room 2</li>
-      <hr>
-      <li id = "list">room 3</li>
-      <hr>
-      <li id = "list">room 4</li>
-      <hr>
-      <li id = "list">room 5</li>
-      <hr>
-      <li id = "list">room 6</li>
-      <hr>
-      <li id = "list">room 7</li>
-      <hr>
-      <li id = "list">room 8</li>
-    </ul>
-  </div>
-  <div id = "add_room">
-    <input id = "room_name" type="text" required>
-    <button id = "create_room" type="button" >Create</button>
-  </div>
-  <script src="assets/roomsview.js"></script>
-</body>
-</html>
+    <div id = "room_list">
+      <section class = 'room'>
+        <h2>Radiohead</h2>
+        <p class = 'date'>July 1, 2017</p>
+        <img src = 'assets/radiohead.jpg'>
+        <p class = 'text'>Radiohead are an English rock band from Abingdon, Oxfordshire, formed in 1985. The band consists of Thom Yorke (lead vocals, guitar, piano, keyboards), Jonny Greenwood (lead guitar, keyboards, other instruments), Ed O'Brien (guitar, backing vocals), Colin Greenwood (bass), and Phil Selway (drums, percussion, backing vocals). They have worked with producer Nigel Godrich and cover artist Stanley Donwood since 1994.</p>
+        <button class = "seeFull">See Full Conversation</button>
+      </section>
+      <section class = 'room'>
+        <h2>Radiohead</h2>
+        <p class = 'date'>July 1, 2017</p>
+        <img src = 'assets/radiohead.jpg'>
+        <p class = 'text'>Radiohead are an English rock band from Abingdon, Oxfordshire, formed in 1985. The band consists of Thom Yorke (lead vocals, guitar, piano, keyboards), Jonny Greenwood (lead guitar, keyboards, other instruments), Ed O'Brien (guitar, backing vocals), Colin Greenwood (bass), and Phil Selway (drums, percussion, backing vocals). They have worked with producer Nigel Godrich and cover artist Stanley Donwood since 1994.</p>
+        <button class = "seeFull">See Full Conversation</button>
+      </section>
+      <section class = 'room'>
+        <h2>Radiohead</h2>
+        <p class = 'date'>July 1, 2017</p>
+        <img src = 'assets/radiohead.jpg'>
+        <p class = 'text'>Radiohead are an English rock band from Abingdon, Oxfordshire, formed in 1985. The band consists of Thom Yorke (lead vocals, guitar, piano, keyboards), Jonny Greenwood (lead guitar, keyboards, other instruments), Ed O'Brien (guitar, backing vocals), Colin Greenwood (bass), and Phil Selway (drums, percussion, backing vocals). They have worked with producer Nigel Godrich and cover artist Stanley Donwood since 1994.</p>
+        <button class = "seeFull">See Full Conversation</button>
+      </section>
+    </div>
+    <div id = "add_room">
+      <h2>Create Conversation</h2>
+      <p>Title:</p>
+      <input id = "room_name" type="text" required>
+      <textarea></textarea>
+      <input class = 'img' type="file" name="pic" accept="image/*">
+      <button id = "create_room" type="button" >Submit</button>
+    </div>
+    <div class = 'footer'>
+    </div>
+    <script src="assets/roomsview.js"></script>
+  </body>
+  </html>
