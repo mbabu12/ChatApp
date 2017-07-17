@@ -38,12 +38,12 @@ module.exports = function(app){
     else{
       checkData.checkUser(user).then(function(resp){
         console.log(resp);
-        if(resp){
+        if(resp.saved){
           roomsController(app);
-          res.send('user exists');
+          res.send({resp : 'user exists', curUser : resp.curUser});
         }
         else
-        res.send('wrong username or password');
+        res.send({resp : 'wrong username or password', curUser : ''});
       });
     }
   });

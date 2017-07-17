@@ -1,16 +1,33 @@
-$(function() {
+$(document).ready(function(){
 
-  var addAction = function() {
+  $('#create_room').on('click', function(){
 
-    var newRoomValue = $('#room_name').val();
+    var title = $('#room_name').val();
+    var text = $('#text').val();
+    var lat;
+    var lon;
 
-    if (newRoomValue == '') {
-      return true;
-    }
+    $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+      JSON.stringify(data, null, 2);
+      lat = data.latitude;
+      lon = data.longitude;
+    });
 
-    $('#room_list').append('<section class = "room">');
+    var newConv = {title: title, latitude:lat, longitude:lon, userId:'', date:'', text: text, img: '',comments:''};
+/*
+    $.ajax({
+      type: 'POST',
+      url: '/',
+      data: '',
+      success: function(resp){
+      }
+    });
+    */
+    return false;
+  });
+});
 
-  };
+
 
   document.getElementById("room_name").addEventListener("keyup", function(event) {
     event.preventDefault();
@@ -27,9 +44,6 @@ $(function() {
     window.open("/conversation", "_self",false);
   });
 
-  $('#create_room').on('click', addAction);
-
-});
 /*
 var username = sessionStorage.getItem("username");
 document.getElementById('username').innerHTML = username;

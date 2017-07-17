@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   $('#enter').on('click', function(){
 
     var name = $('#name').val();
@@ -11,8 +10,8 @@ $(document).ready(function(){
       url: '/',
       data: loginData,
       success: function(resp){
-        if(resp === 'user exists'){
-          window.location.href = '/rooms';
+        if(resp.resp === 'user exists'){
+          window.location.href = '/rooms?id='+resp.curUser._id;
         }
         else{
           location.reload();

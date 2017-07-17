@@ -21,33 +21,21 @@
     <hr>
   </div>
     <div id = "room_list">
+      <% for(var i = 0; i < allConv.length; i++){ %>
       <section class = 'room'>
-        <h2>Radiohead</h2>
-        <p class = 'date'>July 1, 2017</p>
+        <h2><%= allConv[i].title %></h2>
+        <p class = 'date'><%= allConv[i].date %></p>
         <img src = 'assets/radiohead.jpg'>
-        <p class = 'text'>Radiohead are an English rock band from Abingdon, Oxfordshire, formed in 1985. The band consists of Thom Yorke (lead vocals, guitar, piano, keyboards), Jonny Greenwood (lead guitar, keyboards, other instruments), Ed O'Brien (guitar, backing vocals), Colin Greenwood (bass), and Phil Selway (drums, percussion, backing vocals). They have worked with producer Nigel Godrich and cover artist Stanley Donwood since 1994.</p>
+        <p class = 'text'><%= allConv[i].text %></p>
         <button class = "seeFull">See Full Conversation</button>
       </section>
-      <section class = 'room'>
-        <h2>Radiohead</h2>
-        <p class = 'date'>July 1, 2017</p>
-        <img src = 'assets/radiohead.jpg'>
-        <p class = 'text'>Radiohead are an English rock band from Abingdon, Oxfordshire, formed in 1985. The band consists of Thom Yorke (lead vocals, guitar, piano, keyboards), Jonny Greenwood (lead guitar, keyboards, other instruments), Ed O'Brien (guitar, backing vocals), Colin Greenwood (bass), and Phil Selway (drums, percussion, backing vocals). They have worked with producer Nigel Godrich and cover artist Stanley Donwood since 1994.</p>
-        <button class = "seeFull">See Full Conversation</button>
-      </section>
-      <section class = 'room'>
-        <h2>Radiohead</h2>
-        <p class = 'date'>July 1, 2017</p>
-        <img src = 'assets/radiohead.jpg'>
-        <p class = 'text'>Radiohead are an English rock band from Abingdon, Oxfordshire, formed in 1985. The band consists of Thom Yorke (lead vocals, guitar, piano, keyboards), Jonny Greenwood (lead guitar, keyboards, other instruments), Ed O'Brien (guitar, backing vocals), Colin Greenwood (bass), and Phil Selway (drums, percussion, backing vocals). They have worked with producer Nigel Godrich and cover artist Stanley Donwood since 1994.</p>
-        <button class = "seeFull">See Full Conversation</button>
-      </section>
+      <% } %>
     </div>
     <div id = "add_room">
       <h2>Create Conversation</h2>
       <p>Title:</p>
       <input id = "room_name" type="text" required>
-      <textarea></textarea>
+      <textarea id = "text"></textarea>
       <input class = 'img' type="file" name="pic" accept="image/*">
       <button id = "create_room" type="button" >Submit</button>
     </div>

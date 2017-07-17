@@ -21,14 +21,15 @@ module.exports.addUser = function addUser(user){
 }
 
 module.exports.checkUser = function checkUser(user){
-  var saved = false;
-  return userModel.findOne({userName : user.userName}, {password : user.password}, function (err, doc) {
+  var info = {saved : false, curUser : ''};
+  return userModel.findOne({userName : user.userName, password : user.password}, {userName : 0, avatar : 0, password : 0}, function (err, doc) {
     if (doc){
-      saved = true;
+      info.saved = true;
+      info.curUser = doc;
     }else{
-      saved = false;
+      info.saved = false;
     }
   }).then(function(){
-    return saved;
+    return info;
   });
 }
