@@ -16,7 +16,7 @@ var ConvModelSchema = new schema({
   userId : {type: schema.Types.ObjectId, required : true},
   date : {type : Date, default : Date.now},
   text : {type : String, required : true},
-  img : {type : String},
+  img : { data: Buffer },
   comments : [CommentSchema]
 });
 

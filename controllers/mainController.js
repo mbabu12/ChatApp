@@ -37,7 +37,7 @@ module.exports = function(app){
     }
     else{
       checkData.checkUser(user).then(function(resp){
-        console.log(resp);
+      //  console.log(resp);
         if(resp.saved){
           roomsController(app);
           res.send({resp : 'user exists', curUser : resp.curUser});
