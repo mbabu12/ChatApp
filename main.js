@@ -7,6 +7,7 @@ app.set('view engine', 'ejs');
 
 //sets static files
 app.use('/assets',express.static('assets'));
+app.use('/uploads',express.static('uploads'));
 
 //start mainController
 mainController(app);

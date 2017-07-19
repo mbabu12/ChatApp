@@ -185,9 +185,10 @@ hr{
 .room img{
   margin-left: 2%;
   float: left;
-  width: 25%;
+  width: 20%;
   height: auto;
   margin-right: 2%;
+  max-height: 70%;
 }
 
 .conv img{
@@ -208,6 +209,9 @@ hr{
   margin-right: 2%;
   margin-bottom: 0;
   margin-left: 2%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 58%;
 }
 
 .conv .date{
