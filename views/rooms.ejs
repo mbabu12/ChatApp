@@ -27,7 +27,7 @@
         <p class = 'date'><%= allConv[i].date %></p>
         <img src = 'uploads/<%= allConv[i].img %>'>
         <p class = 'text'><%= allConv[i].text %></p>
-        <button class = "seeFull">See Full Conversation</button>
+        <button class = "seeFull" id = '<%= allConv[i]._id %>' onClick='myFunc(this.id);'>See Full Conversation</button>
       </section>
       <% } %>
     </div>

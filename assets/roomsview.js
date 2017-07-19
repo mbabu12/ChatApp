@@ -67,15 +67,8 @@ $('#logout').click(function() {
   window.open("/", "_self",false);
 });
 
-$('.seeFull').click(function() {
-  window.open("/conversation", "_self",false);
-});
-
-/*
-var username = sessionStorage.getItem("username");
-document.getElementById('username').innerHTML = username;
-function create()
+function myFunc(id)
 {
-var room = document.getElementById('room_name').value;
-document.write(room);
-}*/
+  var userId = getParameterByName('id');
+  window.open("/conversation?userId="+userId+"&id="+id, "_self",false);
+}

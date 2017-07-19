@@ -18,10 +18,6 @@ module.exports = function(app){
     res.render('sign');
   });
 
-  app.get('/conversation', function(req,res){
-    res.render('conversation');
-  });
-
   app.post('/', urlencodedParser, function(req,res){
     var user = new UserModel({userName:req.body.lname, password:req.body.lpassword, avatar:''});
     if(req.body.login === 'no'){

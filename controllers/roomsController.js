@@ -1,8 +1,10 @@
 const ConvModel = require('../models/groupConv');
 const UserModel = require('../models/user');
+var conversationController = require('./conversationController');
 var bodyparser = require('body-parser');
 var urlencodedParser = bodyparser.urlencoded({ extended: false });
 var fs = require('fs');
+
 
 module.exports = function(app){
   //get data from mongodb and pass to roomsview
@@ -11,6 +13,7 @@ module.exports = function(app){
       if(err) throw err;
       UserModel.findById(req.query.id, function (err, user) {
         if(user){
+          conversationController(app);
           res.render('rooms', {allConv : data, curUser : user});
         }
         else{
