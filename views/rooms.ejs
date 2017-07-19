@@ -34,10 +34,12 @@
     <div id = "add_room">
       <h2>Create Conversation</h2>
       <p>Title:</p>
-      <input id = "room_name" type="text" required>
-      <textarea id = "text"></textarea>
-      <input id = 'getimg' class = 'img' type="file" name="pic" accept="image/*">
-      <button id = "create_room" type="button" >Submit</button>
+      <form method="post" enctype="multipart/form-data" action = '/rooms'>
+        <input id = "room_name" type="text" required>
+        <textarea id = "text"></textarea>
+        <input id = 'getimg' class = 'img' type="file" name="pic" accept="image/*">
+        <button id = "create_room" type="button" >Submit</button>
+      </form>
     </div>
     <div class = 'footer'>
     </div>

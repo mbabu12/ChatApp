@@ -10,12 +10,25 @@ function getParameterByName(name, url) {
 
 
 $(document).ready(function(){
+  var files = [];
+
+  $("input[type=file]").change(function(event) {
+  $.each(event.target.files, function(index, file) {
+    var reader = new FileReader();
+    reader.onload = function(event) {
+      object = {};
+      object.filename = file.name;
+      object.data = event.target.result;
+      files.push(object);
+    };
+    reader.readAsDataURL(file);
+  });
+});
 
   $('#create_room').on('click', function(){
 
     var title = $('#room_name').val();
     var text = $('#text').val();
-  //  var img = document.getElementById("getimg").files[0];
 
     $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
       JSON.stringify(data, null, 2);
@@ -24,17 +37,18 @@ $(document).ready(function(){
       var lon = data.longitude;
       var id = getParameterByName('id');
       var date = new Date();
-      var newConv = {title: title, latitude:lat, longitude:lon, userId:id, date:date, text: text, img: '', comments:[]};
+
+      var newConv = {title: title, latitude:lat, longitude:lon, userId:id, date:date, text: text, img:files[0].filename, comments:[]};
+      var alldata = {fordb : newConv, imgData : files[0].data};
 
       $.ajax({
         type: 'POST',
         url: '/rooms',
-        data: newConv,
+        data: alldata,
         success: function(data){
           location.reload();
         }
       });
-
       return false;
     });
   });

@@ -247,6 +247,11 @@ hr{
   min-height: 320px;
 }
 
+#add_room form{
+  width: 100%;
+  height: 100%;
+}
+
 #add_room h2{
   display: block;
   color: rgb(18, 113, 237);
@@ -271,7 +276,7 @@ hr{
   border: none;
 }
 
-#add_room textarea{
+#text{
   margin-left: 2%;
   width: 94%;
   height: 50%;
