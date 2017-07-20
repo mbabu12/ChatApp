@@ -26,44 +26,25 @@
     <div class = "comments">
       <div class = 'first'>
         <h2>Comments</h2>
-        <img src="/assets/1497826116_ninja-simple.png"></img>
-        <input type = "text">
+        <img src="/uploads/<%= curUser.avatar %>"></img>
+        <input type = "text" id = "addComment">
         <hr>
       </div>
       <div class = 'com'>
+        <% for(var i = 0; i < convData.comments.length; i++){ %>
         <section>
           <img class = 'compic' src="/assets/1497826116_ninja-simple.png"></img>
           <p class = 'comtitle'>Mariam B</p>
-          <div class = "appear">
-            <a href="#">Link 1</a>
-          </div>
-          <p class = 'comdate'>1 July, 2017</p>
-          <p class = 'comtext'>After signing to EMI in 1991, Radiohead released their debut single "Creep" in 1992.</p>
+          <p class = 'comdate'><%= convData.comments[i].date %></p>
+          <p class = 'comtext'><%= convData.comments[i].text %></p>
         </section>
-        <section>
-          <img class = 'compic' src="/assets/1497826116_ninja-simple.png"></img>
-          <p class = 'comtitle'>Mariam B</p>
-          <p class = 'comdate'>1 July, 2017</p>
-          <p class = 'comtext'>After signing to EMI in 1991, Radiohead released their debut single "Creep" in 1992.</p>
-        </section>
-        <section>
-          <img class = 'compic' src="/assets/1497826116_ninja-simple.png"></img>
-          <p class = 'comtitle'>Mariam B</p>
-          <p class = 'comdate'>1 July, 2017</p>
-          <p class = 'comtext'>After signing to EMI in 1991, Radiohead released their debut single "Creep" in 1992.</p>
-        </section>
-        <section>
-          <img class = 'compic' src="/assets/1497826116_ninja-simple.png"></img>
-          <p class = 'comtitle'>Mariam B</p>
-          <p class = 'comdate'>1 July, 2017</p>
-          <p class = 'comtext'>After signing to EMI in 1991, Radiohead released their debut single "Creep" in 1992.</p>
-        </section>
+        <% } %>
         <button class = 'show'>Show More</button>
       </div>
     </div>
   </div>
   <div class = 'footer'>
   </div>
-  <script src="assets/roomsview.js"></script>
+  <script src="assets/conversationview.js"></script>
 </body>
 </html>

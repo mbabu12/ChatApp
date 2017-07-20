@@ -1,4 +1,4 @@
-const ConvModel = require('../models/groupConv');
+const ConvModel = require('../models/groupConv').ConvModel;
 const UserModel = require('../models/user');
 var conversationController = require('./conversationController');
 var bodyparser = require('body-parser');

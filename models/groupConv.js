@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
+var exports = module.exports = {};
 // creates comment model
 var CommentSchema = new schema({
   userId : {type: schema.Types.ObjectId, required : true},
@@ -23,4 +24,4 @@ var ConvModelSchema = new schema({
 const ConvModel = mongoose.model('Conversations', ConvModelSchema);
 
 // for using elsewhere
-module.exports = ConvModel;
+exports.ConvModel = ConvModel;
