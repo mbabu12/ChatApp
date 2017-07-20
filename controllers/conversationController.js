@@ -18,16 +18,23 @@ module.exports = function(app){
           ConvModel.findById(req.query.id, function(err,data){
             if(data){
               if(err) throw err;
-
+              var userIds = [];
               var userInfos = [];
-              for(var i = 0; i < data.comments.length; i++){
-                UserModel.findById(data.comments.userId, function (err, us){
-                  if(us){
-                    userInfos.push(us);
-                  }
-                });
-              }
-              res.render('conversation', {convData : data, curUser : user, infos : userInfos});
+              data.comments.forEach(function(comment){
+                userIds.push(comment.userId);
+              });
+              UserModel.find({_id: {$in: userIds}}, function (err, users){
+                if(users){
+                  userIds.forEach(function(usId){
+                    users.forEach(function(us){
+                      if(usId.equals(us._id)){
+                        userInfos.push({_id: us._id, userName:us.userName, avatar:us.avatar});
+                      }
+                    });
+                  });
+                  res.render('conversation', {convData : data, curUser : user, infos : userInfos});
+                }
+              })
             }
             else{
               res.redirect('/');
