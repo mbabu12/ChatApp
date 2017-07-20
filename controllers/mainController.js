@@ -18,6 +18,11 @@ module.exports = function(app){
     res.render('sign');
   });
 
+  app.get('/logout', function(req, res) {
+    req.session.reset();
+    res.redirect('/');
+  });
+
   function decodeBase64Image(dataString) {
     var matches = dataString.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/),
     response = {};
@@ -37,7 +42,6 @@ module.exports = function(app){
     if(req.body.login === 'no'){
       user.avatar = req.body.imgname;
       checkData.addUser(user).then(function(resp){
-        console.log(resp);
         if(resp)
         res.send('already added');
         else{
@@ -49,20 +53,18 @@ module.exports = function(app){
             }
             console.log("The file was saved!");
           });
-          roomsController(app);
           res.send('success');
         }
       });
     }
     else{
       checkData.checkUser(user).then(function(resp){
-      //  console.log(resp);
         if(resp.saved){
-          roomsController(app);
-          res.send({resp : 'user exists', curUser : resp.curUser});
+          req.session.user = resp.curUser;
+          res.send('user exists');
         }
         else
-        res.send({resp : 'wrong username or password', curUser : ''});
+        res.send('wrong username or password');
       });
     }
   });

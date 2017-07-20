@@ -37,8 +37,8 @@ $(document).ready(function(){
       url: '/',
       data: loginData,
       success: function(resp){
-        if(resp.resp === 'user exists'){
-          window.location.href = '/rooms?id='+resp.curUser._id;
+        if(resp === 'user exists'){
+          window.location.href = '/rooms';
         }
         else{
           location.reload();
