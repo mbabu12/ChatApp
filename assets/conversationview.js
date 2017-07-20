@@ -12,10 +12,9 @@ function getParameterByName(name, url) {
 function createComment(){
   var text = $('#addComment').val();
   var date = new Date();
-  var userId = getParameterByName('userId');
   var id = getParameterByName('id');
 
-  var newCom = {userId: userId, text:text, date:date};
+  var newCom = {text:text, date:date};
 
   $.ajax({
     type: 'POST',
