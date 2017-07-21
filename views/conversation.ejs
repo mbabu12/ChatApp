@@ -31,7 +31,7 @@
         <hr>
       </div>
       <div class = 'com'>
-        <% for(var i = 0; i < convData.comments.length; i++){ %>
+        <% for(var i = convData.comments.length-1; i >=0; i--){ %>
         <section>
           <img class = 'compic' src="/uploads/<%= infos[i].avatar %>"></img>
           <p class = 'comtitle'><%= infos[i].userName %></p>
