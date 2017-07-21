@@ -2,6 +2,7 @@ var express = require('express');
 var mainController = require('./controllers/mainController');
 var roomsController = require('./controllers/roomsController');
 var conversationController = require('./controllers/conversationController');
+var chatController = require('./controllers/chatController');
 var session = require('client-sessions');
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(session({
 mainController(app);
 roomsController(app);
 conversationController(app);
+chatController(app);
 
 //listening to port 3000
 app.listen(3000, '127.0.0.1');

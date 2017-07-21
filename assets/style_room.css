@@ -310,6 +310,7 @@ hr{
 
 .comments{
   display: block;
+  overflow: scroll;
 }
 .comments .first{
   display: block;
