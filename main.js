@@ -5,6 +5,7 @@ var conversationController = require('./controllers/conversationController');
 var chatController = require('./controllers/chatController');
 var session = require('client-sessions');
 var app = express();
+var socket = require('socket.io');
 
 //setting template engine
 app.set('view engine', 'ejs');
@@ -20,12 +21,15 @@ app.use(session({
   activeDuration: 5 * 60 * 1000,
 }));
 
+//listening to port 3000
+var server = app.listen(3000, '127.0.0.1', function(){
+  console.log('listening to port 3000');
+});
+
+var io = socket(server);
+
 //start mainController
 mainController(app);
 roomsController(app);
 conversationController(app);
-chatController(app);
-
-//listening to port 3000
-app.listen(3000, '127.0.0.1');
-console.log('listening to port 3000');
+chatController(app, io);

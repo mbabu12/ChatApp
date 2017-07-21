@@ -4,6 +4,7 @@
   <title>Chat Inn</title>
   <link rel="stylesheet" type="text/css" href="/assets/style_chat.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 </head>
 <body>
   <nav>
@@ -25,6 +26,6 @@
       <button id = "enter">Send</button>
     </div>
   </div>
-  <script src="assets/chat.js"></script>
+  <script id = 'jsfile' type="text/javascript" userId = '<%= userId %>' src="assets/chat.js"></script>
 </body>
 </html>
