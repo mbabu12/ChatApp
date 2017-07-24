@@ -19,13 +19,17 @@
   </nav>
   <div id = "main">
     <div id = "active">
+      <h2>Active Users</h2>
+      <ul id = "active-users">
+      </ul>
     </div>
     <div id = "chatarea">
+      <div id = 'header'></div>
       <div id = "texts"></div>
-      <textarea id = "msgarea"></textarea>
-      <button id = "enter">Send</button>
+      <input type= 'text' id = "msgarea"></textarea>
+      <button id = "enter" type="button">Send</button>
     </div>
   </div>
-  <script id = 'jsfile' type="text/javascript" userId = '<%= userId %>' src="assets/chat.js"></script>
+  <script id = 'jsfile' type="text/javascript" userId = '<%= userId %>' userName = '<%= userName %>' src="assets/chat.js"></script>
 </body>
 </html>
