@@ -41,8 +41,13 @@ require('socketio-auth')(io, {
 
     socket.on('newmsg', function(data){
       userId = data.to;
-      sockId = connections[data.to].sock.id;
-      connections[data.to].sock.emit('sendmsg', {msg:data.message, usId: allsockets[socket.id]});
+      if(connections[data.to]){
+        sockId = connections[data.to].sock.id;
+        connections[data.to].sock.emit('sendmsg', {msg:data.message, usId: allsockets[socket.id]});
+      }
+      else{
+        socket.emit('sendmsg', {msg:"disconnected", usId: ''});
+      }
     });
 
   //  console.log(req.session.user);

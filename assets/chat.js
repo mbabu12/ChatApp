@@ -25,13 +25,14 @@ socket.on('connect', function(){
     socket.emit('new connection','sdfsdf');
 
     socket.on('sendmsg', function(data){
-      console.log(data.usId);
-      console.log(chatwith);
       if(data.usId === chatwith){
-
         var textarea = $('#texts');
         textarea.append('<p>'+chatuser+': '+data.msg+'</p>');
         scrollbottom();
+      }
+      else if(data.usId === ''){
+        var textarea = $('#texts');
+        textarea.append('<p>'+chatuser+' '+data.msg+'</p>');
       }
       else{
         var clicked = document.getElementById(data.usId);
