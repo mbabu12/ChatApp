@@ -34,9 +34,13 @@
         <% for(var i = convData.comments.length-1; i >=0; i--){ %>
         <section>
           <img class = 'compic' src="/uploads/<%= infos[i].avatar %>"></img>
-          <p class = 'comtitle'><%= infos[i].userName %></p>
-          <p class = 'comdate'><%= convData.comments[i].date %></p>
-          <p class = 'comtext'><%= convData.comments[i].text %></p>
+          <div id = "comstuff">
+            <p class = 'comtitle'><%= infos[i].userName %></p>
+            <p class = 'comdate'><%= convData.comments[i].date %></p>
+            <p class = 'comtext'><%= convData.comments[i].text %></p>
+          </div>
+          <% if(curUser.id == convData.comments[i].userId){ disp = 'block'; }else{ disp = 'none'; } %>
+          <button id = 'delete' type = 'button' style = "display: <%= disp %>" class = '<%= convData.comments[i].id %>'>x</button>
         </section>
         <% } %>
       <!--  <button class = 'show'>Show More</button> -->

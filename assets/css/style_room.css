@@ -324,6 +324,18 @@ hr{
 .com section{
   height: 110px;
   display: block;
+  width: 100%;
+}
+
+.compic{
+  width: 20%;
+  float: right;
+}
+
+#comstuff{
+  width: 70%;
+  float: left;
+  height: 100%;
 }
 
 .com p{
@@ -377,4 +389,17 @@ hr{
 
 .comtitle:hover .appear{
   display: block;
+}
+
+#delete{
+  border: none;
+  background-color: white;
+  color:rgb(18, 113, 237);
+  outline: none;
+  float:right;
+  margin-right: 20px;
+}
+
+#delete:hover{
+  background-color: rgb(227, 227, 227);
 }

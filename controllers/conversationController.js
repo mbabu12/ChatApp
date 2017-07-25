@@ -77,4 +77,32 @@ module.exports = function(app){
       res.redirect('/');
     }
   });
+
+  app.delete('/conversation', urlencodedParser, function(req,res){
+    if (req.session && req.session.user) { // Check if session exists
+      // lookup the user in the DB
+      UserModel.findById(req.session.user._id, function (err, user) {
+        if (!user) {
+          // if the user isn't found in the DB, reset the session info and
+          // redirect the user to the login page
+          req.session.reset();
+          res.redirect('/');
+        } else {
+          ConvModel.findById(req.query.id, function(err,data){
+            if(err) throw err;
+            var index = data.comments.indexOf({userId:req.session.user._id, text:req.body.text, date:req.body.date});
+            data.comments.splice(index,1);
+            data.save(function (err) {
+              if (err) return handleError(err)
+              console.log('Success!');
+            });
+            res.json(data);
+          });
+        }
+      });
+    }
+    else{
+      res.redirect('/');
+    }
+  });
 }

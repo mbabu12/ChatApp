@@ -37,3 +37,16 @@ document.getElementById("addComment").addEventListener("keyup", function(event) 
 $('#logout').click(function() {
   window.open("/logout", "_self",false);
 });
+
+$('#delete').click(function(){
+  comid = $('#delete').className;
+  var id = getParameterByName('id');
+  $.ajax({
+    type: 'DELETE',
+    url: '/conversation?id='+id,
+    data: comid,
+    success: function(data){
+      location.reload();
+    }
+  });
+});
