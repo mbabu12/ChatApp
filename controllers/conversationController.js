@@ -6,6 +6,7 @@ var urlencodedParser = bodyparser.urlencoded({ extended: false });
 module.exports = function(app){
   //get data from mongodb and pass to conversation view
   app.get('/conversation', function(req,res){
+    console.log(req.session);
     if (req.session && req.session.user) { // Check if session exists
       // lookup the user in the DB
       UserModel.findById(req.session.user._id, function (err, user) {

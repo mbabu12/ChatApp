@@ -14,7 +14,8 @@ module.exports = function(app, io){
           req.session.reset();
           res.redirect('/');
         } else {
-          res.render('chat', {userId:req.session.user._id, userName:user.userName});
+          console.log(user._id);
+          res.render('chat', {userId:user._id, userName:user.userName});
         }
       });
     }else{

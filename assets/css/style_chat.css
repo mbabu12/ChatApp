@@ -21,7 +21,7 @@ nav{
   top: 0;
   left: 0;
   width: 100%;
-  background-image: url(/assets/background.jpg);
+  background-image: url(/assets/images/background.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom;
@@ -34,7 +34,7 @@ nav{
   background-color: Transparent;
   cursor: pointer;
   outline: none;
-  background-image: url(/assets/settings-gears.png);
+  background-image: url(/assets/images/settings-gears.png);
   background-size: 40px;
   background-repeat: no-repeat;
   background-position: center;
@@ -72,7 +72,7 @@ nav{
   margin-left: 30%;
   background-color: Transparent;*/
   outline: none;
-  background-image: url(/assets/exit.png);
+  background-image: url(/assets/images/exit.png);
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: center;
@@ -87,7 +87,7 @@ nav{
   background-color: rgb(14, 45, 117);
 }
 .dropdown:hover .settings {
-  background-image: url(/assets/settings-gears-hover.png);
+  background-image: url(/assets/images/settings-gears-hover.png);
 }
 
 #main{

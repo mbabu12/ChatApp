@@ -59,3 +59,7 @@ function myFunc(id)
 {
   window.open("/conversation?id="+id, "_self",false);
 }
+
+$('#clickchat').click(function(){
+  window.open("/chat", "_self",false);
+});

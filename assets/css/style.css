@@ -4,7 +4,7 @@ html {
 
 body {
   margin: 0;
-  background-image: url(/assets/background.jpg);
+  background-image: url(/assets/images/background.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -51,14 +51,14 @@ body {
 }
 
 #name{
-  background-image: url(/assets/user.png);
+  background-image: url(/assets/images/user.png);
   background-size: 10%;
   background-position: left;
   background-repeat: no-repeat;
 }
 
 #password{
-  background-image: url(/assets/locked-padlock.png);
+  background-image: url(/assets/images/locked-padlock.png);
   background-size: 10%;
   background-position: left;
   background-repeat: no-repeat;
@@ -90,7 +90,7 @@ body {
 }
 
 #mail{
-  background-image: url(/assets/email-filled-closed-envelope.png);
+  background-image: url(/assets/images/email-filled-closed-envelope.png);
   background-size: 8%;
   background-position: 2px;
   background-repeat: no-repeat;

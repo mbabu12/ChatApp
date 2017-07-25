@@ -54,7 +54,17 @@ $(document).ready(function(){
 
     var name = $('#name').val();
     var password = $('#password').val();
-    var loginData = {login:'no', lname: name, lpassword:password, imgname: files[0].filename, imgdata : files[0].data};
+    var imgname = '';
+    var imgdata = '';
+    if(files.length == 0){
+      imgname = 'girl.png';
+    }
+    else{
+      imgname = files[0].filename;
+      imgdata = files[0].data;
+    }
+
+    var loginData = {login:'no', lname: name, lpassword:password, imgname: imgname, imgdata : imgdata};
 
     $.ajax({
       type: 'POST',
