@@ -46,7 +46,7 @@ module.exports = function(app){
     var user = UserModel({userName:req.body.lname, password:req.body.lpassword, avatar:''});
     if(req.body.login === 'no'){
       user.avatar = req.body.imgname;
-      userModel.findOne({userName : user.userName}, function (err, doc) {
+      UserModel.findOne({userName : user.userName}, function (err, doc) {
         if(doc){
           res.send('already added');
         }
